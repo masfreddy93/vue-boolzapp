@@ -68,7 +68,6 @@ body {
     gap: 10px;
     align-items: center;
     margin-right: 10px;
-
 }
 
 
@@ -194,4 +193,8 @@ body {
     right: 0;
     bottom: 0;
     transform: translate(-50%, -50%);
+}
+
+.active {
+    background-color: #E9EBEB;
 }

@@ -42,10 +42,12 @@
             <ul class="aside-contacts">
                 <li 
                     class="aside-contacts-user"
+                    :class="contact.class"
                     v-for="contact in contacts"
+                    
                 >
                     <img :src="contact.avatar" alt="user">
-                    <h3>{{ contact.name }}</h3>
+                    <h3> {{ contact.name }} </h3>
                 </li>
             </ul>
         </aside>

@@ -3,6 +3,7 @@ const contacts = [
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
         visible: true,
+        class: 'active',
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -27,7 +28,7 @@ const contacts = [
     },
     {
         name: 'Samuele',
-        avatar: './img/avatar_3.jpg'
+        avatar: './img/avatar_3.jpg',
     },
     {
         name: 'Anna',
