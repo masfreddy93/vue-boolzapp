@@ -9,8 +9,18 @@ a {
     color: currentColor;
 }
 
+ul, ol {
+    list-style: none;
+}
+
 img {
-    max-width: 100%;
+    max-height: 65px;
+    border-radius: 50%;
+}
+
+.aside-user img,
+.main-header img {
+    max-height: 50px;
 }
 
 body {
@@ -26,14 +36,12 @@ body {
 
 .aside {
     flex-basis: calc(100% / 3);
-    border-right: 2px solid red;
     display: flex;
     flex-direction: column;
 }
 
 
 .aside > div {
-    border: 2px solid green;
     flex-basis: 0;
 }
 
@@ -43,14 +51,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
 }
 
 .aside-user-details,
 .main-header-details {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 10px;
 }
 
 .aside-user-options{
@@ -65,11 +72,23 @@ body {
     display: flex;
     align-items: center;
     background-color: #8EDAFC;
+    gap: 10px;
+}
 
+.aside-notifications > i {
+    border-radius: 50%;
+    background-color: white;
+    padding: 1rem;
+    color: #8EDAFC;
+}
+
+.aside-notifications a {
+    text-decoration: underline;
+    font-size: 14px;
 }
 
 .aside-search {
-    padding: 5px;
+    padding: 10px;
 }
 
 .aside-search > div{
@@ -77,12 +96,16 @@ body {
 }
 
 .aside-search > div > i {
-    padding: 0 20px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 2px;
 }
 
 .aside-search > div > input {
     flex-basis: 0;
     flex-grow: 1;
+    padding: 10px;
 }
 
 .aside-contacts {
@@ -105,9 +128,13 @@ body {
 .main-body {
     flex-basis: 0;
     flex-grow: 1;
-    background-image: url(https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg);
-    background-size: cover;
-    filter: opacity(0.3);
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    padding: 55px 100px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .main-footer {
@@ -126,5 +153,31 @@ body {
 .main-footer > input {
     flex-grow: 1;
     padding: 10px;
-    
+}
+
+.message-sent,
+.message-received {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.message-sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.message-received {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.message-sent > span,
+.message-received > span {
+    position: absolute;
+    font-size: 0.5rem;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
 }
