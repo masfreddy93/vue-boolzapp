@@ -34,12 +34,13 @@ body {
     border: 2px solid black;
 }
 
+
+/* aside */
 .aside {
     flex-basis: calc(100% / 3);
     display: flex;
     flex-direction: column;
 }
-
 
 .aside > div {
     flex-basis: 0;
@@ -51,6 +52,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #EAEAEA;
 }
 
 .aside-user-details,
@@ -58,12 +60,15 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+
 }
 
 .aside-user-options{
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-right: 10px;
+
 }
 
 
@@ -116,12 +121,12 @@ body {
 
 .aside-contacts-user {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
 }
 
 
-
+/* main */
 .main {
     flex-basis: 0;
     flex-grow: 1;
@@ -138,7 +143,7 @@ body {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
     background-size: contain;
-    padding: 55px 100px;
+    padding: 55px 55px;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -149,6 +154,7 @@ body {
     flex-basis: 0;
     display: flex;
     padding: 10px;
+    background-color: #EAEAEA;
 }
 
 .main-footer-emoticons,
