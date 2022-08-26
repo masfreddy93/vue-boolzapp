@@ -7,10 +7,55 @@
     <title>Vue Boolzapp</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/5abae20b44.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="root">
-        {{message}}
+        <aside class="aside">
+            <div class="aside-user">
+                <div class="aside-user-details">
+                    <img src="" alt="Avatar">
+                    <h4 class="name">Luca</h4>
+                </div>
+                <div class="aside-user-options">
+                    <a href="#"><i class="fa-solid fa-spinner"></i></a>
+                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                    <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </div>
+
+            <div class="aside-notifications">
+                <img src="" alt="immagine notifiche">
+                <div class="aside-notifications-texts">
+                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                    <p>Attiva notifiche desktop</p>
+                </div>
+            </div>
+
+            <div class="aside-search">
+                <div class="aside-search-options">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            <div class="aside-contacts">
+
+            </div>
+        </aside>
+        <main class="main">
+            <main class="main-header">
+                <div class="main-header-details">
+                    <img src="" alt="Avatar">
+                    <div class="main-header-details-texts">
+                        <h4 class="name">Nicola</h4>
+                        <p>Ultimo aggiornamento alle 12</p>
+                    </div>
+                </div>
+                <div class="aside-user-options">
+                    icone
+                </div>
+            </main>
+        </main>
     </div>
     
     

@@ -3,3 +3,94 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    height: 100vh;
+    padding: 20px 200px;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    border: 2px solid black;
+}
+
+.aside {
+    flex-basis: calc(100% / 3);
+    border-right: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.aside > div {
+    border: 2px solid green;
+    flex-basis: 0;
+}
+
+.aside-user,
+.main-header {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside-user-details,
+.main-header-details {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.aside-user-options{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+
+.aside-notifications {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #8EDAFC;
+
+}
+
+.aside-search {
+    padding: 5px;
+}
+
+.aside-search > div{
+    display: flex;
+}
+
+.aside-search > div > i {
+    padding: 0 20px;
+}
+
+.aside-search > div > input {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.aside-contacts {
+    flex-grow: 1;
+    background-color: aquamarine;
+    overflow-y: scroll;
+}
+
+.main {
+    flex-basis: 0;
+    flex-grow: 1;
+}
