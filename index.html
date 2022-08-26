@@ -38,16 +38,25 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
-            <div class="aside-contacts">
 
-            </div>
+            <ul class="aside-contacts">
+                <li 
+                    class="aside-contacts-user"
+                    v-for="contact in contacts"
+                >
+                    <img :src="contact.avatar" alt="user">
+                    <h3>{{ contact.name }}</h3>
+                </li>
+            </ul>
         </aside>
+
+
         <main class="main">
             <div class="main-header">
                 <div class="main-header-details">
                     <a href="#"><img src="./img/avatar_1.jpg" alt="Avatar"></a>
                     <div class="main-header-details-texts">
-                        <h4 class="name">Nicola</h4>
+                        <h4 class="name">Michele</h4>
                         <p>Ultimo aggiornamento alle 12</p>
                     </div>
                 </div>
