@@ -73,25 +73,21 @@
             </div>
 
             <ul class="main-body">
-                <li
-                v-for="message in messages"
-                :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
+                <template
+                    v-for= "contact in contacts "
+                    v-if="contact.class === 'active'"
                 >
-                    {{ message.message }}
-                    <span>11:20</span>
-                </li>
-                <!-- <div class="message-sent">
-                    ehi vez
-                    <span>15:30</span>
-                </div>
-                <div class="message-sent">
-                    come stai
-                    <span>15:31</span>
-                </div>
-                <div class="message-received">
-                    tutto bene e tu?
-                    <span>16:20</span>
-                </div> -->
+                    
+                    <li
+
+                        v-for="message in contact.messages"
+                        :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
+                    >
+                            {{ message.message }}
+                            <span>11:20</span>
+                    </li>
+
+                </template>
             </ul>
 
             <div class="main-footer">

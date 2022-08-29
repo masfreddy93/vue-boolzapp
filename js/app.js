@@ -9,22 +9,47 @@ const contacts = [
                 date: '10/01/2020 15:30:55',
                 message: 'Hai portato a spasso il cane?',
                 status: 'sent',
+                // class: 'active'
             }, 
             {
                 date: '10/01/2020 15:50:00',
                 message: 'Ricordati di stendere i panni',
                 status: 'sent',
+                // class: 'active'
             },
             {
                 date: '10/01/2020 16:15:22',
                 message: 'Tutto fatto!',
                 status: 'received',
+                // class: 'active'
             },
         ],
     },
     {
         name: 'Fabio',
-        avatar: './img/avatar_2.jpg'
+        avatar: './img/avatar_2.jpg',
+        visible: true,
+        // class: 'active',
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                message: 'Hai mangiato?',
+                status: 'sent',
+                // class: 'active'
+            }, 
+            {
+                date: '10/01/2020 15:50:00',
+                message: 'Ricordati di stendere i panni',
+                status: 'sent',
+                // class: 'active'
+            },
+            {
+                date: '10/01/2020 16:15:22',
+                message: 'Tutto fatto!',
+                status: 'received',
+                // class: 'active'
+            },
+        ],
     },
     {
         name: 'Samuele',
@@ -53,7 +78,6 @@ const app = new Vue({
     el: '#root',
     data: {
         contacts,
-        messages: contacts[0].messages
     },
     methods: {
 
