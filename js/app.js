@@ -52,6 +52,10 @@ const contacts = [
 const app = new Vue({
     el: '#root',
     data: {
-        contacts
+        contacts,
+        messages: contacts[0].messages
     },
+    methods: {
+
+    }
 })

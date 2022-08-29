@@ -12,13 +12,14 @@
 <body>
     <div id="root">
         <aside class="aside">
+
             <div class="aside-user">
                 <div class="aside-user-details">
                     <a href="#"><img src="./img/avatar_io.jpg" alt="Avatar"></a>
                     <h4 class="name">Camilla</h4>
                 </div>
                 <div class="aside-user-options">
-                    <a href="#"><i class="fa-solid fa-spinner"></i></a>
+                    <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
                     <a href="#"><i class="fa-solid fa-message"></i></a>
                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
@@ -48,12 +49,14 @@
                 >
                     <img :src="contact.avatar" alt="user">
                     <h3> {{ contact.name }} </h3>
+                    <span>12:00</span>
                 </li>
             </ul>
         </aside>
 
 
         <main class="main">
+
             <div class="main-header">
                 <div class="main-header-details">
                     <a href="#"><img src="./img/avatar_1.jpg" alt="Avatar"></a>
@@ -63,14 +66,21 @@
                     </div>
                 </div>
                 <div class="aside-user-options">
-                    <a href="#"><i class="fa-solid fa-spinner"></i></a>
-                    <a href="#"><i class="fa-solid fa-message"></i></a>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-paperclip"></i></a>
                     <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                 </div>
             </div>
 
-            <div class="main-body">
-                <div class="message-sent">
+            <ul class="main-body">
+                <li
+                v-for="message in messages"
+                :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
+                >
+                    {{ message.message }}
+                    <span>11:20</span>
+                </li>
+                <!-- <div class="message-sent">
                     ehi vez
                     <span>15:30</span>
                 </div>
@@ -81,8 +91,8 @@
                 <div class="message-received">
                     tutto bene e tu?
                     <span>16:20</span>
-                </div>
-            </div>
+                </div> -->
+            </ul>
 
             <div class="main-footer">
                 <div class="main-footer-emoticons">
