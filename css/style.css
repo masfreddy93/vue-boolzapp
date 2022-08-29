@@ -126,6 +126,7 @@ body {
     gap: 20px;
     padding: 10px 20px;
     position: relative;
+    cursor: pointer;
 }
 
 .aside-contacts-user > span {

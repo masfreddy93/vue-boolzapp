@@ -43,15 +43,16 @@
             <ul class="aside-contacts">
                 <li 
                     class="aside-contacts-user"
-                    :class="contact.class"
+                    @click="makeVisible(contact)"
+                    :class="contact.visible ? 'active' : ''"
                     v-for="contact in contacts"
-                    
                 >
                     <img :src="contact.avatar" alt="user">
                     <h3> {{ contact.name }} </h3>
                     <span>12:00</span>
                 </li>
             </ul>
+            
         </aside>
 
 
@@ -75,16 +76,15 @@
             <ul class="main-body">
                 <template
                     v-for= "contact in contacts "
-                    v-if="contact.class === 'active'"
+                    v-if="contact.visible"
                 >
                     
                     <li
-
                         v-for="message in contact.messages"
                         :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
                     >
-                            {{ message.message }}
-                            <span>11:20</span>
+                        {{ message.message }}
+                        <span>11:20</span>
                     </li>
 
                 </template>
