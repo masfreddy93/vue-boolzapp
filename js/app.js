@@ -175,16 +175,11 @@ const app = new Vue({
     el: '#root',
     data: {
         contacts,
-        // active: false,
+        active: 0,
     },
     methods: {
-        makeVisible: function(contact) {
-            // contact.visible=false;
-            contact.visible= !contact.visible
-            console.log(contact.visible)
-            console.log(contact.name)
-            // contact.visible=false;
-            // console.log(contact.visible)
-        }
+       
     }
 })
+
+// DA SISTEMARE DATE E ORE

@@ -43,13 +43,15 @@
             <ul class="aside-contacts">
                 <li 
                     class="aside-contacts-user"
-                    @click="makeVisible(contact)"
-                    :class="contact.visible ? 'active' : ''"
-                    v-for="contact in contacts"
+                    @click="active = index"
+                    :class="(active === index) ? 'active' : ''"
+                    v-for="(contact, index) in contacts"
                 >
                     <img :src="contact.avatar" alt="user">
                     <h3> {{ contact.name }} </h3>
-                    <span>12:00</span>
+                    <span>
+                        {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                    </span>
                 </li>
             </ul>
             
@@ -60,10 +62,17 @@
 
             <div class="main-header">
                 <div class="main-header-details">
-                    <a href="#"><img src="./img/avatar_1.jpg" alt="Avatar"></a>
+                    <a href="#"><img :src="contacts[active].avatar" alt="Avatar"></a>
                     <div class="main-header-details-texts">
-                        <h4 class="name">Michele</h4>
-                        <p>Ultimo messaggio oggi alle 12</p>
+                        <h4 class="name">
+                            {{ contacts[active].name }}
+                        </h4>
+                        <p>
+                            Ultimo messaggio 
+                            {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                            alle
+                            {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                        </p>
                     </div>
                 </div>
                 <div class="aside-user-options">
@@ -74,20 +83,20 @@
             </div>
 
             <ul class="main-body">
-                <template
+                <!-- <template
                     v-for= "contact in contacts "
                     v-if="contact.visible"
-                >
+                > -->
                     
                     <li
-                        v-for="message in contact.messages"
+                        v-for="message in contacts[active].messages"
                         :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
                     >
                         {{ message.message }}
-                        <span>11:20</span>
+                        <span>{{ message.date }}</span>
                     </li>
 
-                </template>
+                <!-- </template> -->
             </ul>
 
             <div class="main-footer">
