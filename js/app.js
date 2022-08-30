@@ -223,6 +223,12 @@ const app = new Vue({
         getHourLastMessage(array) {
             const lastMessage = array.messages[array.messages.length-1].date
             return this.getHours(lastMessage)
+        },
+
+        getTextLastMessage(array) {
+            // const lastMessage = array.messages[array.messages.length-1].message
+            const lastMessage = array.messages[array.messages.length-1].message
+            return lastMessage
         }
     },
 })

@@ -129,7 +129,11 @@ body {
     cursor: pointer;
 }
 
-.aside-contacts-user > span {
+.aside-contacts-user-texts h3 {
+    margin-bottom: 0.5rem;
+}
+
+.aside-contacts-user-texts > span {
     position: absolute;
     font-size: 0.5rem;
     right: 0;

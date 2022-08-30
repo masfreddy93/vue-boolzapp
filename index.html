@@ -57,12 +57,12 @@
                     v-for="(contact, index) in searchContact"
                 >
                     <img :src="contact.avatar" alt="user">
-                    <h3> {{ contact.name }} </h3>
-                    <p> {{  }}</p>
-                    <span>
-                        {{getHourLastMessage(activeContact)}}
-                        <!-- {{contacts[active].messages[contacts[active].messages.length-1].date}}  -->
-                    </span>
+                    <div class="aside-contacts-user-texts">
+                        <h3> {{ contact.name }} </h3>
+                        <p> {{ getTextLastMessage(contact) }}</p>
+                        <span> {{ getHourLastMessage(contact) }} </span>
+                    </div>
+                    
                 </li>
             </ul>
             
