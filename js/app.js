@@ -37,7 +37,7 @@ const contacts = [
                 status: 'sent',
             },
             {
-                date: '10/01/2020 16:15:22',
+                date: '10/01/2020 16:20:22',
                 message: 'Ok!',
                 status: 'received',
             },
@@ -59,7 +59,7 @@ const contacts = [
                 status: 'sent',
             },
             {
-                date: '10/01/2020 16:15:22',
+                date: '10/01/2020 17:15:22',
                 message: 'Certo!',
                 status: 'received',
             },
@@ -218,6 +218,11 @@ const app = new Vue({
         getHours(stringDate) {
             const hours = stringDate.split(' ')
             return hours[1].substr(0,5)
+        },
+
+        getLastMessage(array) {
+            const lastMessage = array.messages[array.messages.length-1].date
+            return this.getHours(lastMessage)
         }
     },
 })
