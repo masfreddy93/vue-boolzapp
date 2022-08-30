@@ -3,8 +3,6 @@ const contacts = [
         name: 'Michele',
         avatar: './img/avatar_1.jpg',
         visible: true,
-        // class: 'active',
-        index: 0,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -26,9 +24,7 @@ const contacts = [
     {
         name: 'Fabio',
         avatar: './img/avatar_2.jpg',
-        visible: false,
-        class: '',
-        index: 1,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -50,9 +46,7 @@ const contacts = [
     {
         name: 'Samuele',
         avatar: './img/avatar_3.jpg',
-        visible: false,
-        class: '',
-        index: 2,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -75,9 +69,7 @@ const contacts = [
     {
         name: 'Anna',
         avatar: './img/avatar_4.jpg',
-        visible: false,
-        class: '',
-        index: 3,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -99,9 +91,7 @@ const contacts = [
     {
         name: 'Lucia',
         avatar: './img/avatar_5.jpg',
-        visible: false,
-        class: '',
-        index: 4,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -123,9 +113,7 @@ const contacts = [
     {
         name: 'Jack',
         avatar: './img/avatar_6.jpg',
-        visible: false,
-        class: '',
-        index: 5,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -147,9 +135,7 @@ const contacts = [
     {
         name: 'Sam',
         avatar: './img/avatar_7.jpg',
-        visible: false,
-        class: '',
-        index: 6,
+        visible: true,
         messages: [
             {
                 date: '10/01/2020 15:30:55',
@@ -176,10 +162,45 @@ const app = new Vue({
     data: {
         contacts,
         active: 0,
+        inputMessage: '',
+        inputSearch: '',
+    },
+    computed: {
+        searchContact() {
+            // return this.contacts.filter((el) => el.name.toLowerCase() === this.inputSearch.toLowerCase())
+            return this.contacts.filter((el) => el.name.toLowerCase().includes(this.inputSearch.toLowerCase()))
+        }
     },
     methods: {
-       
-    }
+       addMessage: function() {
+            this.inputMessage = this.inputMessage.trim();
+
+            if(!this.inputMessage) return
+
+            const messages = this.contacts[this.active].messages;
+
+            messages.push({
+                date: '10/02/2022 15:40:47',
+                message: this.inputMessage,
+                status: 'sent',
+            })
+
+            setTimeout(this.addReply, 1000
+            this.inputMessage = '';
+       },
+       addReply: function() {
+            const messages = this.contacts[this.active].messages;
+
+            const message = {
+                date: '10/02/2022 15:40:47',
+                message: 'ok',
+                status: 'received',
+            }
+            messages.push(message)
+        }
+    },
 })
 
-// DA SISTEMARE DATE E ORE
+
+// DA SISTEMARE DATE E ORE (sia milestone 2 che milestone 3)
+//ricerca di prime lettere nel searchContact (sistemare la computed)
