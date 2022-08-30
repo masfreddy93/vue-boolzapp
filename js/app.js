@@ -220,7 +220,7 @@ const app = new Vue({
             return hours[1].substr(0,5)
         },
 
-        getLastMessage(array) {
+        getHourLastMessage(array) {
             const lastMessage = array.messages[array.messages.length-1].date
             return this.getHours(lastMessage)
         }

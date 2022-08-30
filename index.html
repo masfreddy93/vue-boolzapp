@@ -58,7 +58,9 @@
                 >
                     <img :src="contact.avatar" alt="user">
                     <h3> {{ contact.name }} </h3>
+                    <p> {{  }}</p>
                     <span>
+                        {{getHourLastMessage(activeContact)}}
                         <!-- {{contacts[active].messages[contacts[active].messages.length-1].date}}  -->
                     </span>
                 </li>
@@ -77,10 +79,10 @@
                             {{ activeContact.name }}
                         </h4>
                         <p>
-                            Ultimo messaggio
+                            Ultimo accesso oggi alle 12
                             <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
-                            alle
-                            {{getLastMessage(activeContact)}}
+                            <!-- alle 
+                            {{getLastMessage(activeContact)}} -->
                             <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
                         </p>
                     </div>
