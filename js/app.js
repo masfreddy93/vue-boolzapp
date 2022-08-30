@@ -168,7 +168,6 @@ const app = new Vue({
     },
     computed: {
         searchContact() {
-            // return this.contacts.filter((el) => el.name.toLowerCase() === this.inputSearch.toLowerCase())
             return this.contacts.filter((el) => el.name.toLowerCase().includes(this.inputSearch.toLowerCase()))
         }
     },
@@ -178,7 +177,7 @@ const app = new Vue({
 
             if(!this.inputMessage) return
 
-            const messages = this.contacts[this.active].messages;
+            const messages = this.activeContact.messages;
 
             messages.push({
                 date: '10/02/2022 15:40:47',
@@ -186,19 +185,32 @@ const app = new Vue({
                 status: 'sent',
             })
 
-            setTimeout(this.addReply, 1000)
+            // setTimeout(this.addReply, 1000)
+            setTimeout(() => {
+
+                const message = {
+                    date: '10/02/2022 15:40:47',
+                    message: 'ok',
+                    status: 'received',
+                }
+
+                messages.push(message)
+            }, 1000)
+
             this.inputMessage = '';
        },
-       addReply: function() {
-            const messages = this.contacts[this.active].messages;
 
-            const message = {
-                date: '10/02/2022 15:40:47',
-                message: 'ok',
-                status: 'received',
-            }
-            messages.push(message)
-        },
+    //    addReply: function() {
+    //         const messages = this.contacts[this.active].messages;
+
+    //         const message = {
+    //             date: '10/02/2022 15:40:47',
+    //             message: 'ok',
+    //             status: 'received',
+    //         }
+    //         messages.push(message)
+    //     },
+
         setActiveContact: function(contact) {
             this.activeContact = contact;
             console.log(this.activeContact.name)
