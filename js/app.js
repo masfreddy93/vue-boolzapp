@@ -164,6 +164,7 @@ const app = new Vue({
         active: 0,
         inputMessage: '',
         inputSearch: '',
+        activeContact: contacts[0],
     },
     computed: {
         searchContact() {
@@ -185,7 +186,7 @@ const app = new Vue({
                 status: 'sent',
             })
 
-            setTimeout(this.addReply, 1000
+            setTimeout(this.addReply, 1000)
             this.inputMessage = '';
        },
        addReply: function() {
@@ -197,6 +198,10 @@ const app = new Vue({
                 status: 'received',
             }
             messages.push(message)
+        },
+        setActiveContact: function(contact) {
+            this.activeContact = contact;
+            console.log(this.activeContact.name)
         }
     },
 })

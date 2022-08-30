@@ -52,14 +52,14 @@
             <ul class="aside-contacts">
                 <li 
                     class="aside-contacts-user"
-                    @click="active = index"
-                    :class="(active === index) ? 'active' : ''"
+                    @click="setActiveContact(contact)"
+                    :class="(activeContact === contact) ? 'active' : ''"
                     v-for="(contact, index) in searchContact"
                 >
                     <img :src="contact.avatar" alt="user">
                     <h3> {{ contact.name }} </h3>
                     <span>
-                        {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                        <!-- {{contacts[active].messages[contacts[active].messages.length-1].date}}  -->
                     </span>
                 </li>
             </ul>
@@ -71,16 +71,16 @@
 
             <div class="main-header">
                 <div class="main-header-details">
-                    <a href="#"><img :src="contacts[active].avatar" alt="Avatar"></a>
+                    <a href="#"><img :src="activeContact.avatar" alt="Avatar"></a>
                     <div class="main-header-details-texts">
                         <h4 class="name">
-                            {{ contacts[active].name }}
+                            {{ activeContact.name }}
                         </h4>
                         <p>
                             Ultimo messaggio 
-                            {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                            {{searchContact[active].messages[contacts[active].messages.length-1].date}}
                             alle
-                            {{contacts[active].messages[contacts[active].messages.length-1].date}}
+                            {{searchContact[active].messages[contacts[active].messages.length-1].date}}
                         </p>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                 > -->
                     
                     <li
-                        v-for="message in contacts[active].messages"
+                        v-for="message in activeContact.messages"
                         :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
                     >
                         {{ message.message }}
