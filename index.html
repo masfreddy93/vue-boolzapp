@@ -44,10 +44,6 @@
                     
                 </div>
             </div>
-            <!-- <div v-for="foundContact in searchContact">
-                {{foundContact.name}}
-
-            </div> -->
 
             <ul class="aside-contacts">
                 <li 
@@ -80,10 +76,6 @@
                         </h4>
                         <p>
                             Ultimo accesso oggi alle 12
-                            <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
-                            <!-- alle 
-                            {{getLastMessage(activeContact)}} -->
-                            <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
                         </p>
                     </div>
                 </div>
@@ -95,11 +87,6 @@
             </div>
 
             <ul class="main-body">
-                <!-- <template
-                    v-for= "contact in contacts "
-                    v-if="contact.visible"
-                > -->
-                    
                     <li
                         v-for="message in activeContact.messages"
                         :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
@@ -107,8 +94,7 @@
                         {{ message.message }}
                         <span>{{ getHours(message.date) }}</span>
                     </li>
-
-                <!-- </template> -->
+                    
             </ul>
 
             <div class="main-footer">

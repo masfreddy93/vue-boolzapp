@@ -27,39 +27,34 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 10:30:55',
                 message: 'Hai mangiato?',
                 status: 'sent',
             }, 
             {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
+                date: '10/01/2020 10:31:00',
+                message: 'Io si',
                 status: 'sent',
             },
             {
-                date: '10/01/2020 16:20:22',
-                message: 'Ok!',
+                date: '10/01/2020 19:20:22',
+                message: 'Anche io!',
                 status: 'received',
             },
         ],
     },
     {
-        name: 'Samuele',
+        name: 'Samuele Bersani',
         avatar: './img/avatar_3.jpg',
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 19:30:55',
                 message: 'Hai dormito?',
                 status: 'sent',
             }, 
             {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
-                status: 'sent',
-            },
-            {
-                date: '10/01/2020 17:15:22',
+                date: '10/01/2020 20:15:22',
                 message: 'Certo!',
                 status: 'received',
             },
@@ -67,29 +62,29 @@ const contacts = [
         
     },
     {
-        name: 'Anna',
+        name: 'Luca Pezzolo',
         avatar: './img/avatar_4.jpg',
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 20:30:55',
                 message: 'Hai stirato?',
                 status: 'sent',
             }, 
             {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
+                date: '10/01/2020 20:50:00',
+                message: 'Le camicie intendo',
                 status: 'sent',
             },
             {
-                date: '10/01/2020 16:15:22',
-                message: 'Va bene!',
+                date: '10/01/2020 22:15:22',
+                message: 'Si si si!',
                 status: 'received',
             },
         ],
     },
     {
-        name: 'Lucia',
+        name: 'Lorenzo Cherubini detto Jovanotti',
         avatar: './img/avatar_5.jpg',
         visible: true,
         messages: [
@@ -98,63 +93,49 @@ const contacts = [
                 message: 'Vieni fuori?',
                 status: 'sent',
             }, 
-            {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
-                status: 'sent',
-            },
-            {
-                date: '10/01/2020 16:15:22',
-                message: 'Why?',
-                status: 'received',
-            },
         ],
     },
     {
-        name: 'Jack',
+        name: 'Lucia',
         avatar: './img/avatar_6.jpg',
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 09:30:55',
                 message: 'Bella',
-                status: 'sent',
+                status: 'received',
             }, 
             {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
-                status: 'sent',
+                date: '10/01/2020 07:40:00',
+                message: 'Come stai?',
+                status: 'received',
             },
             {
                 date: '10/01/2020 16:15:22',
-                message: 'Hola!',
-                status: 'received',
+                message: 'Bene',
+                status: 'sent',
             },
         ],
     },
     {
-        name: 'Sam',
+        name: 'Sam Martino',
         avatar: './img/avatar_7.jpg',
         visible: true,
         messages: [
             {
-                date: '10/01/2020 15:30:55',
+                date: '10/01/2020 10:30:55',
                 message: 'Ehi',
                 status: 'sent',
             }, 
             {
-                date: '10/01/2020 15:50:00',
-                message: 'Ricordati di stendere i panni',
-                status: 'sent',
-            },
-            {
-                date: '10/01/2020 16:15:22',
-                message: 'Kiss Kiss!',
+                date: '10/01/2020 17:20:22',
+                message: 'Dimmi pure che non vieni sai, non si fa così',
                 status: 'received',
             },
         ],
     }
 ]
+
 
 
 const app = new Vue({
@@ -169,7 +150,7 @@ const app = new Vue({
     computed: {
         searchContact() {
             return this.contacts.filter((el) => el.name.toLowerCase().trim().includes(this.inputSearch.toLowerCase().trim()))
-        }
+        },
     },
     methods: {
        addMessage: function() {
@@ -180,7 +161,7 @@ const app = new Vue({
             const messages = this.activeContact.messages;
 
             messages.push({
-                date: '10/02/2022 15:40:47',
+                date: '10/02/2022 21:40:47',
                 message: this.inputMessage,
                 status: 'sent',
             })
@@ -189,7 +170,7 @@ const app = new Vue({
             setTimeout(() => {
 
                 const message = {
-                    date: '10/02/2022 15:40:47',
+                    date: '10/02/2022 21:40:47',
                     message: 'ok',
                     status: 'received',
                 }
@@ -226,13 +207,9 @@ const app = new Vue({
         },
 
         getTextLastMessage(array) {
-            // const lastMessage = array.messages[array.messages.length-1].message
             const lastMessage = array.messages[array.messages.length-1].message
             return lastMessage
-        }
+        },
     },
 })
 
-
-// DA SISTEMARE DATE E ORE (sia milestone 2 che milestone 3)
-//ricerca di prime lettere nel searchContact (sistemare la computed)

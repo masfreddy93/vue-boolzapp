@@ -26,19 +26,19 @@ img {
 body {
     height: 100vh;
     padding: 20px 100px;
-    background: linear-gradient(#009688 20%, white 20%) 
+    background: linear-gradient(#009688 20%, #DBDBD4 20%) 
 }
 
 #root {
     height: 100%;
     display: flex;
-    border: 1px solid black;
+    border: 1px solid rgb(136, 132, 132);
 }
 
 
 /* aside */
 .aside {
-    flex-basis: calc(100% / 3);
+    max-width: calc(100% / 3);
     display: flex;
     flex-direction: column;
 }
@@ -61,7 +61,13 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
+}
 
+.aside-user-details h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .aside-user-options{
@@ -129,15 +135,28 @@ body {
     cursor: pointer;
 }
 
+.aside-contacts-user-texts {
+    overflow: hidden;
+}
+
 .aside-contacts-user-texts h3 {
     margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aside-contacts-user-texts p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .aside-contacts-user-texts > span {
     position: absolute;
     font-size: 0.5rem;
-    right: 0;
-    top: 0;
+    right: 5px;
+    top: 5px;
     transform: translate(-50%, 50%);
 }
 
