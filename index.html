@@ -77,10 +77,10 @@
                             {{ activeContact.name }}
                         </h4>
                         <p>
-                            Ultimo messaggio 
-                            {{searchContact[active].messages[contacts[active].messages.length-1].date}}
+                            Ultimo messaggio
+                            <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
                             alle
-                            {{searchContact[active].messages[contacts[active].messages.length-1].date}}
+                            <!-- {{searchContact[active].messages[contacts[active].messages.length-1].date}} -->
                         </p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                         :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
                     >
                         {{ message.message }}
-                        <span>{{ message.date }}</span>
+                        <span>{{ getHours(message.date) }}</span>
                     </li>
 
                 <!-- </template> -->

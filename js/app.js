@@ -168,7 +168,7 @@ const app = new Vue({
     },
     computed: {
         searchContact() {
-            return this.contacts.filter((el) => el.name.toLowerCase().includes(this.inputSearch.toLowerCase()))
+            return this.contacts.filter((el) => el.name.toLowerCase().trim().includes(this.inputSearch.toLowerCase().trim()))
         }
     },
     methods: {
@@ -213,7 +213,11 @@ const app = new Vue({
 
         setActiveContact: function(contact) {
             this.activeContact = contact;
-            console.log(this.activeContact.name)
+        },
+
+        getHours(stringDate) {
+            const hours = stringDate.split(' ')
+            return hours[1].substr(0,5)
         }
     },
 })
