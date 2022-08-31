@@ -146,6 +146,8 @@ const app = new Vue({
         inputMessage: '',
         inputSearch: '',
         activeContact: contacts[0],
+        dataa: new Date(),
+        // datae: this.dataa.getMonth()
     },
     computed: {
         searchContact() {
@@ -161,7 +163,7 @@ const app = new Vue({
             const messages = this.activeContact.messages;
 
             messages.push({
-                date: '10/02/2022 21:40:47',
+                date: this.getDateInRealTime(this.dataa),
                 message: this.inputMessage,
                 status: 'sent',
             })
@@ -170,7 +172,7 @@ const app = new Vue({
             setTimeout(() => {
 
                 const message = {
-                    date: '10/02/2022 21:40:47',
+                    date: this.getDateInRealTime(this.dataa),
                     message: 'ok',
                     status: 'received',
                 }
@@ -210,6 +212,11 @@ const app = new Vue({
             const lastMessage = array.messages[array.messages.length-1].message
             return lastMessage
         },
+
+        getDateInRealTime(variable) {
+            const date = (variable.toString().split(' ')[2]) + '/' + ('0' + (variable.getMonth() + 1)) + '/' + (variable.toString().split(' ')[3]) + ' ' + (variable.toString().split(' ')[4]);
+            return date
+        }
     },
 })
 
