@@ -50,7 +50,7 @@
                     class="aside-contacts-user"
                     @click="setActiveContact(contact)"
                     :class="(activeContact === contact) ? 'active' : ''"
-                    v-for="(contact, index) in searchContact"
+                    v-for="contact in searchContact"
                 >
                     <img :src="contact.avatar" alt="user">
                     <div class="aside-contacts-user-texts">
@@ -87,14 +87,13 @@
             </div>
 
             <ul class="main-body">
-                    <li
-                        v-for="message in activeContact.messages"
-                        :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
-                    >
-                        {{ message.message }}
-                        <span>{{ getHours(message.date) }}</span>
-                    </li>
-                    
+                <li
+                    v-for="(message,i) in activeContact.messages"
+                    :class= "(message.status === 'sent') ? 'message-sent' : 'message-received' "
+                >
+                    {{ sortedMessagesByDate[i].message }}
+                    <span>{{ getHours(message.date) }}</span>
+                 </li>
             </ul>
 
             <div class="main-footer">

@@ -49,13 +49,13 @@ const contacts = [
         visible: true,
         messages: [
             {
-                date: '10/01/2020 19:30:55',
-                message: 'Hai dormito?',
+                date: '10/01/2020 22:30:55',
+                message: 'Certo!',
                 status: 'sent',
             }, 
             {
                 date: '10/01/2020 20:15:22',
-                message: 'Certo!',
+                message: 'Hai dormito?',
                 status: 'received',
             },
         ],
@@ -146,13 +146,15 @@ const app = new Vue({
         inputMessage: '',
         inputSearch: '',
         activeContact: contacts[0],
-        dataa: new Date(),
-        // datae: this.dataa.getMonth()
+        actualDate: new Date(),
     },
     computed: {
         searchContact() {
             return this.contacts.filter((el) => el.name.toLowerCase().trim().includes(this.inputSearch.toLowerCase().trim()))
         },
+        sortedMessagesByDate() {
+            return this.activeContact.messages.sort((a, b) => new Date(a.date) - new Date(b.date))
+        }
     },
     methods: {
        addMessage: function() {
@@ -163,7 +165,7 @@ const app = new Vue({
             const messages = this.activeContact.messages;
 
             messages.push({
-                date: this.getDateInRealTime(this.dataa),
+                date: this.getDateInRealTime(this.actualDate),
                 message: this.inputMessage,
                 status: 'sent',
             })
@@ -172,7 +174,7 @@ const app = new Vue({
             setTimeout(() => {
 
                 const message = {
-                    date: this.getDateInRealTime(this.dataa),
+                    date: this.getDateInRealTime(this.actualDate),
                     message: 'ok',
                     status: 'received',
                 }
@@ -216,7 +218,37 @@ const app = new Vue({
         getDateInRealTime(variable) {
             const date = (variable.toString().split(' ')[2]) + '/' + ('0' + (variable.getMonth() + 1)) + '/' + (variable.toString().split(' ')[3]) + ' ' + (variable.toString().split(' ')[4]);
             return date
-        }
+        },
     },
 })
 
+
+
+
+// const dates = [
+//   new Date("2022-04-29T16:10:43-06:00"),
+//   new Date("2023-04-29T16:10:43-06:00"),
+//   new Date("2022-01-29T16:10:43-06:00")
+// ]
+
+// console.log(dates)
+
+// dates.sort((a, b) => a - b)
+
+// console.log(dates)
+
+
+
+// const datess = [
+//     '10/01/2020 09:30:55',
+//     '10/01/2020 07:40:00',
+//     '10/01/2020 16:15:22',
+//   ]
+  
+//   console.log(datess)
+  
+//   datess.sort((a, b) => new Date(a) - new Date(b))
+  
+//   console.log(datess)
+
+//   contact.sms = contact.sms.sort((a,b) => new Date(a.time) - new Date(b.time));
